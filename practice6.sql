@@ -15,12 +15,12 @@
     WITH (FORMAT CSV, HEADER);
 
 
-    SELECT * FROM new_york_addresses -- compare the time required
+    SELECT * FROM new_york_addresses -- compare the time required (1 secs 336 msec).
     WHERE street = 'BROADWAY';
 
     -- Creating a B-tree index on the street column from new_york_addresses table:
 
     CREATE INDEX street_idx ON new_york_addresses (street);
 
-    SELECT * FROM new_york_addresses -- compare the time required
+    SELECT * FROM new_york_addresses -- compare the time required (630 msec).
     WHERE street = 'BROADWAY';
