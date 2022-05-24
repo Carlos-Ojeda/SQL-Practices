@@ -37,5 +37,7 @@
       SELECT '1929-09-30'::timestamp + '5 years'::interval + '2 hours'::interval;
       
   -- Challenge: 
-      -- Calculate the lenght of each ride. Sort the lenght from longest to shortest.
-      
+    -- Calculate the lenght of each ride. Sort the lenght from longest to shortest.
+      SELECT tpep_dropoff_datetime - tpep_pickup_datetime AS duration_time
+      FROM nyc_yellow_taxi_trips
+      ORDER BY duration_time DESC
